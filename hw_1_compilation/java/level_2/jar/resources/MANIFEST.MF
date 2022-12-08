@@ -1,0 +1,2 @@
+Main-Class: ua.com.alevel.Greetings
+Class-Path: commons-lang3-3.12.0.jar
