@@ -193,7 +193,7 @@ public class EmployeeInterface {
         project.setName(managerName);
         System.out.println("Please enter a project location");
         String location = reader.readLine();
-        project.setLocation(managerName);
+        project.setLocation(location);
 
     }
     private void deleteEmployee(BufferedReader reader) throws IOException {
