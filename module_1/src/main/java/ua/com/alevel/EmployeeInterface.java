@@ -190,7 +190,7 @@ public class EmployeeInterface {
         project.setName(name);
         System.out.println("Please enter a project manager name");
         String managerName = reader.readLine();
-        project.setName(managerName);
+        project.setManagerName(managerName);
         System.out.println("Please enter a project location");
         String location = reader.readLine();
         project.setLocation(location);
