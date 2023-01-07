@@ -20,7 +20,7 @@ public class EmployeeServiceTest {
     private static final String firstName = "testName";
     private static final String lastName = "testLastName";
     private static final String sex = "male";
-    private static final Integer age = 22;
+    private static final Integer age = 24;
     private static final String email = "test@mail.com";
     private static final String jobTitle = "testProgrammer";
 
