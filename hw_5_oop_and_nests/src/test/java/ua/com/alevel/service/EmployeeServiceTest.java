@@ -187,7 +187,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    @Order(18)
+    @Order(17)
     public void shouldBeCreateProjectWhenDataEmployeeIsValid() {
         Project projectWithValidData = generateProject(SIZE +1);
         employeeService.createProject(projectWithValidData);
