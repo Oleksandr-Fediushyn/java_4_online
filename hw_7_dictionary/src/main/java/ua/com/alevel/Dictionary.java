@@ -39,6 +39,7 @@ public class Dictionary<K, V> {
         boolean flag = true;
         for (int i = 0; i < table.length - 1; i++)
             table[i] = null;
+        size = 0;
         return flag;
     }
     public boolean put(K key, V value) {

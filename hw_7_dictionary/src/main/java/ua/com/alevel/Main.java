@@ -14,5 +14,6 @@ public class Main {
         System.out.println("Work with Dictionary <K, V> where using String");
         System.out.println("-------------------------------------------------------------");
         test.testDictionaryString();
+        System.out.println("-------------------------------------------------------------");
     }
 }

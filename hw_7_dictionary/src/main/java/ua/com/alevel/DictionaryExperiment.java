@@ -67,6 +67,9 @@ public class DictionaryExperiment {
         collectValue = (List<Integer>) theHashTable.values();
         System.out.println(collectValue);
         System.out.println();
+        theHashTable2.clear();
+        System.out.println("size after clear Dictionary");
+        System.out.println(theHashTable2.size());
     }
     void testDictionaryString() {
         Dictionary <String, String> theHashTableString = new Dictionary<>();
