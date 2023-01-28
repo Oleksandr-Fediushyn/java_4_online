@@ -3,6 +3,7 @@ package ua.com.alevel;
 import java.util.*;
 
 public class MatList<E extends Number> implements List<E> {
+
     private final int SIZE = 10;
     int size;
     private Object[] array = new Object[SIZE];
@@ -12,14 +13,12 @@ public class MatList<E extends Number> implements List<E> {
     }
 
     public MatList(E[]... numbers) {
-
         for (E[] number : numbers) {
             add(number);
         }
     }
 
     public MatList(MatList... numbers) {
-
         MatList newMatlist = new MatList();
         if (numbers.length > 1)
             for (int i = 0; i < numbers.length - 1; i++) {
@@ -37,16 +36,13 @@ public class MatList<E extends Number> implements List<E> {
     }
 
     public void add(E... numbers) {
-
         for (int i = 0; i < numbers.length; i++) {
             add(numbers[i]);
         }
     }
 
     public void join(MatList... ml) {
-
         MatList newMatlist = new MatList(ml);
-
         for (int i = 0; i < newMatlist.size(); i++) {
             this.add((E) newMatlist.array[i]);
         }
@@ -59,23 +55,21 @@ public class MatList<E extends Number> implements List<E> {
     }
 
     public void sortDesc() {
-        Number[] s = new Number[size];
-        s = this.toArray();
+        Number[] s = this.toArray();
         Collections.sort(Arrays.asList(s), Collections.reverseOrder());
         this.array = Arrays.copyOf(s, size);
     }
 
     public void sortDesc(E value) {
-        Number[] s = new Number[size];
-        s = this.toArray();
+//        Number[] s = new Number[size];
+//        s = this.toArray(); к чему эта операция - s потом не используется)))
         int fromIndex = this.indexOf(value);
         int toIndex = this.size() - 1;
         this.sortDesc(fromIndex, toIndex);
     }
 
     public void sortDesc(int fromIndex, int toIndex) {
-        Number[] s = new Number[toIndex - fromIndex + 1];
-        s = this.toArray(fromIndex, toIndex);
+        Number[] s = this.toArray(fromIndex, toIndex);
         Collections.sort(Arrays.asList(s), Collections.reverseOrder());
         int k = 0;
         for (int i = fromIndex; i < toIndex + 1; i++) {
@@ -85,23 +79,24 @@ public class MatList<E extends Number> implements List<E> {
     }
 
     public void sortAsc() {
-        Number[] s = new Number[size];
-        s = this.toArray();
+        Number[] s = this.toArray();
         Arrays.sort(s);
         this.array = Arrays.copyOf(s, size);
     }
 
     public void sortAsc(E value) {
-        Number[] s = new Number[size];
-        s = this.toArray();
+//        Number[] s = new Number[size];
+//        s = this.toArray(); в упор не понимаю - зачем эта двойная операция
+//        почему не сделать так Number[] s = this.toArray();
+//        и то, потом эта s не используется
+
         int fromIndex = this.indexOf(value);
         int toIndex = this.size() - 1;
         this.sortAsc(fromIndex, toIndex);
     }
 
     public void sortAsc(int fromIndex, int toIndex) {
-        Number[] s = new Number[toIndex - fromIndex + 1];
-        s = this.toArray(fromIndex, toIndex);
+        Number[] s = this.toArray(fromIndex, toIndex);
         Arrays.sort(s);
         int k = 0;
         for (int i = fromIndex; i < toIndex + 1; i++) {
@@ -114,21 +109,21 @@ public class MatList<E extends Number> implements List<E> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
-        Number[] s = new Number[size];
-        s = this.toArray();
+        Number[] s = this.toArray();
         return (E) s[index];
     }
 
     public Number getMax() {
         long[] m = new long[size];
-
         for (int i = 0; i < array.length; i++) {
             if (array[i] instanceof Number) {
                 m[i] = ((Number) array[i]).longValue();
             }
         }
         System.out.println("Max value in collection");
-        return (Number) Arrays.stream(m).max().getAsLong();
+
+        // а если у тебя дроби?)))
+        return Arrays.stream(m).max().getAsLong();
     }
 
     public Number getMin() {
@@ -139,6 +134,7 @@ public class MatList<E extends Number> implements List<E> {
                 s[i] = ((Number) array[i]).longValue();
             }
         }
+        // а если у тебя дроби?)))
         System.out.println("Min value in collection");
         return (Number) Arrays.stream(s).min().getAsLong();
     }
@@ -195,8 +191,7 @@ public class MatList<E extends Number> implements List<E> {
     }
 
     public MatList cut(int firstIndex, int lastIndex) {
-        Number[] s = new Number[lastIndex - firstIndex + 1];
-        s = this.toArray(firstIndex, lastIndex);
+        Number[] s = this.toArray(firstIndex, lastIndex);
         MatList newMatList = new MatList();
         newMatList.add(s);
         return newMatList;
@@ -248,7 +243,6 @@ public class MatList<E extends Number> implements List<E> {
         if (a.length > size)
             a[size] = null;
         return a;
-
     }
 
     @Override
@@ -387,7 +381,13 @@ public class MatList<E extends Number> implements List<E> {
 
     @Override
     public ListIterator<E> listIterator(int index) {
-        return null;
+//        return null;
+//        ну хотя бы как нить так)))
+        return List.of(array)
+                .stream()
+                .map(el -> (E)el)
+                .toList()
+                .listIterator();
     }
 
     @Override
@@ -396,8 +396,7 @@ public class MatList<E extends Number> implements List<E> {
             System.out.println("The index is out of bounds");
             System.exit(-1);
         }
-        Number[] s = new Number[size];
-        s = this.toArray();
+        Number[] s = this.toArray();
         E[] copy = (E[]) Arrays.copyOfRange(s, fromIndex, toIndex + 1);
         return Arrays.asList(copy);
     }
