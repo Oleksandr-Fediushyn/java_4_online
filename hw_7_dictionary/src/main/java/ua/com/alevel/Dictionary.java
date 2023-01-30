@@ -3,12 +3,12 @@ package ua.com.alevel;
 import java.util.*;
 
 public class Dictionary<K, V> {
+
     private final static int TABLE_SIZE = 128;
     HashEntry<K, V>[] table;
     int size;
 
     Dictionary() {
-
         table = new HashEntry[TABLE_SIZE];
         for (int i = 0; i < TABLE_SIZE; i++)
             table[i] = null;
@@ -24,8 +24,7 @@ public class Dictionary<K, V> {
 
     public boolean containsKey(K key) {
         int i = hash(key);
-        if (table[i] != null && table[i].getKey() == key) return true;
-        else return false;
+        return table[i] != null && table[i].getKey() == key;
     }
     public boolean containsValue(V value) {
         for (int i = 0; i < table.length - 1; i++) {
@@ -42,11 +41,11 @@ public class Dictionary<K, V> {
         size = 0;
         return flag;
     }
+
     public boolean put(K key, V value) {
         int i = hash(key);
         while (table[i] != null && table[i].getKey() != key)
             i = (i + 1) % TABLE_SIZE;
-
         table[i] = new HashEntry<>(key, value);
         if (table[i] != null) {
             size++;
@@ -61,6 +60,7 @@ public class Dictionary<K, V> {
         for (int i = 0; i < dictionary.table.length - 1; i++) {
             if (dictionary.table[i] == null) continue;
             else this.put(dictionary.table[i].getKey(), dictionary.table[i].getValue());
+            //а почему не сделать так - if (table[i] != null) { this.put(dictionary.table[i].getKey(), dictionary.table[i].getValue()) }
         }
         return true;
     }
@@ -71,7 +71,6 @@ public class Dictionary<K, V> {
         } catch (RuntimeException e) {
             System.out.println("This key is invalid");
         }
-
         int i = hash(key);
         while (table[i] != null && table[i].getKey() != key)
             i = (i + 1) % TABLE_SIZE;
@@ -98,6 +97,7 @@ public class Dictionary<K, V> {
         for (int i = 0; i < table.length - 1; i++) {
             if (table[i] == null) continue;
             else keys.add(table[i].getKey());
+            //а почему не сделать так - if (table[i] != null) { keys.add(table[i].getKey()) }
         }
         return keys;
     }
@@ -107,13 +107,13 @@ public class Dictionary<K, V> {
         for (int i = 0; i < table.length - 1; i++) {
             if (table[i] == null) continue;
             else colValues.add(table[i].getValue());
+            //а почему не сделать так - if (table[i] != null) { colValues.add(table[i].getValue()) }
         }
         return colValues;
     }
     private int hash(K key) {
         int hashCod = key.hashCode();
         return Math.abs(hashCod % TABLE_SIZE);
-
     }
 
     private class HashEntry<K, V> {
