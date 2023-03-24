@@ -62,5 +62,4 @@ public class CalendarUtilities {
         String[] parse = format.split("\\s");
         return Integer.parseInt(parse[2]);
     }
-
 }

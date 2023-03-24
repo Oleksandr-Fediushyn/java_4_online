@@ -17,7 +17,6 @@ public class CustomCalendar {
     private static final int ONE_HOUR = 60 * ONE_MINUTE;
     private static final long ONE_DAY = 24 * ONE_HOUR;
 
-
     public CustomCalendar() {
         initDate();
     }
@@ -431,5 +430,4 @@ public class CustomCalendar {
         return String.format("%04d" + "-" + "%02d" + "-" + "%02d" + " " + "%02d" +
                 ":" + "%02d" + ":" + "%02d" + " " + "%03d", year, month, day, hours, minutes, seconds, milliseconds);
     }
-
 }
