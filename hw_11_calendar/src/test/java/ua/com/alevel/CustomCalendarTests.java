@@ -1,10 +1,7 @@
 package ua.com.alevel;
 
-
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.After;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -13,9 +10,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-
 public class CustomCalendarTests {
 
     private static int COUNT = 0;
@@ -26,7 +21,6 @@ public class CustomCalendarTests {
     public CustomCalendarTests() {
     }
 
-
     @BeforeAll
     public static void setUp() {
         for (int i = 0; i < SIZE; i++) {
@@ -34,7 +28,6 @@ public class CustomCalendarTests {
             COUNT++;
         }
     }
-
 
     @Test
     @Order(1)
@@ -478,5 +471,4 @@ public class CustomCalendarTests {
         Assertions.assertEquals(output.toString().replaceAll("\r\n", ""), milliseconds);
         System.setOut(old);
     }
-
 }

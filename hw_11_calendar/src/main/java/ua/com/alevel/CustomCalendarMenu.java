@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 public class CustomCalendarMenu {
 
     public void start() throws IOException {
@@ -100,6 +99,7 @@ public class CustomCalendarMenu {
             case "8" : break;
         }
     }
+
     private void customCalendarOperations(BufferedReader reader, String select) throws IOException {
         switch (select) {
             case "1" : printCurrentDateTime(); break;
@@ -118,16 +118,19 @@ public class CustomCalendarMenu {
         }
         menu();
     }
+
     private void printCurrentDateTime() {
         CustomCalendar customCalendar = new CustomCalendar();
         customCalendar.now();
 
     }
+
     private void printCurrentTimeInMilliseconds() {
         CustomCalendar customCalendar = new CustomCalendar();
         customCalendar.now();
         System.out.println("Time in milliseconds:  " + customCalendar.getTimeMillis());
     }
+
     private void printTimeInMilliseconds(BufferedReader reader) throws IOException {
         System.out.println("Please enter the DATE in one from the next format: ");
         System.out.println("YYYY-MM-DD or YYYY-MM-DD HH:MM or YYYY-MM-DD HH:MM:SS or YYYY-MM-DD HH:MM:SS Ms");
@@ -136,6 +139,7 @@ public class CustomCalendarMenu {
         System.out.println(customCalendar);
         System.out.println("Time in milliseconds:  " + customCalendar.getTimeMillis());
     }
+
     private void setTimeInMilliseconds(BufferedReader reader) throws IOException {
         System.out.println("Please enter the number of milliseconds");
         long newTime = Long.parseLong(reader.readLine());
@@ -143,6 +147,7 @@ public class CustomCalendarMenu {
         System.out.println("This time in milliseconds in DateTime format:");
         System.out.println(customCalendar);
     }
+
     private void setTimeInStringFormat(BufferedReader reader) throws IOException {
         System.out.println("Please enter the DATE in one from the next format: ");
         System.out.println("YYYY-MM-DD or YYYY-MM-DD HH:MM or YYYY-MM-DD HH:MM:SS or YYYY-MM-DD HH:MM:SS Ms");
@@ -150,6 +155,7 @@ public class CustomCalendarMenu {
         CustomCalendar customCalendar = new CustomCalendar(newTime);
         System.out.println(customCalendar);
     }
+
     private void addDateFormat(BufferedReader reader) throws IOException {
         System.out.println("Please enter the DATE in one from the next format: ");
         System.out.println("YYYY-MM-DD or YYYY-MM-DD HH:MM or YYYY-MM-DD HH:MM:SS or YYYY-MM-DD HH:MM:SS Ms");
@@ -181,6 +187,7 @@ public class CustomCalendarMenu {
         System.out.println("New value in DateTime format:");
         System.out.println(newCustomCalendar);
     }
+
     private void minusDateInTextFormat(BufferedReader reader) throws IOException {
         System.out.println("Please enter the DATE in one from the next format: ");
         System.out.println("YYYY-MM-DD or YYYY-MM-DD HH:MM or YYYY-MM-DD HH:MM:SS or YYYY-MM-DD HH:MM:SS Ms");
@@ -227,6 +234,7 @@ public class CustomCalendarMenu {
         }
         else System.out.println("You enter not correct options");
     }
+
     private void minusTime(BufferedReader reader) throws IOException {
         System.out.println("Please enter the start DATE in one from the next format: ");
         System.out.println("YYYY-MM-DD or YYYY-MM-DD HH:MM or YYYY-MM-DD HH:MM:SS or YYYY-MM-DD HH:MM:SS Ms");
@@ -244,6 +252,7 @@ public class CustomCalendarMenu {
         }
         else System.out.println("You enter not correct options");
     }
+
     private void stop() {
         System.exit(0);
     }
