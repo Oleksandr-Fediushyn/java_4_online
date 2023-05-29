@@ -40,7 +40,7 @@ public class EmployeeService {
     }
     public void updateProject(Project project) {
 
-            employeeDao.updateProject(project);
+        employeeDao.updateProject(project);
     }
 
     public void deleteProject(String projectId) {

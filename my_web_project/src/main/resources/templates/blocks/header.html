@@ -1,0 +1,44 @@
+<nav class="navigation-clean-search navbar navbar-light navbar-expand-md" th:fragment="header">
+    <div class="container">
+        <a class="navbar-brand" href="/main">
+            <img alt="logo" class="mr-2" height="50" th:src="@{/img/software.svg}">MySoftware
+        </a>
+        <button class="navbar-toggler" data-target="#navcol-1" data-toggle="collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="btn nav-link" href="/software">Усі додатки</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="btn dropdown-toggle nav-link" data-toggle="dropdown">
+                        Операційна система
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item text-center" href="/catalog?search=Windows">Windows</a>
+                        <a class="dropdown-item text-center" href="/catalog?search=MacOS">Mac OS</a>
+                        <a class="dropdown-item text-center" href="/catalog?search=Linux">Linux</a>
+                    </div>
+                </li>
+            </ul>
+            <form action="/catalog" class="form-inline" method="get" target="_self">
+                <div class="form-group w-100">
+                    <input class="form-control search-field w-100" maxlength="64" name="search" placeholder="Пошук"
+                           type="search">
+                </div>
+            </form>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="btn nav-link" href="/login">Логін</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn nav-link" href="/registration">Реєстрація</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

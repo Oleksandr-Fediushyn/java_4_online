@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body {
+    background: url('https://w0.peakpx.com/wallpaper/549/704/HD-wallpaper-polygon-green-texture-abstract-pattern-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+a.nav-item.nav-link {
+    color: white;
+}
+
+.sort {
+    cursor: pointer;
+    margin-right: 2em;
+}
+
+.login-form, .registration-form {
+    margin-top: 100px;
+}
+
+.card {
+    min-width: 400px;
+}
