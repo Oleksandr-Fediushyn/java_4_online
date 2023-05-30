@@ -1,0 +1,58 @@
+insert into users values (1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'john.doe@example.com','John','Doe');
+insert into users values (2, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'jane.smith@example.com','Jane','Smith');
+insert into users values (3, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'michael.johnson@example.com','Michael','Johnson');
+insert into users values (4, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'emily.brown@example.com','Emily','Brown');
+insert into users values (5, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'david.davis@example.com','David','Davis');
+insert into users values (6, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'sarah.miller@example.com','Sarah','Miller');
+insert into users values (7, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'daniel.wilson@example.com','Daniel','Wilson');
+insert into users values (8, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'olivia.taylor@example.com','Olivia','Taylor');
+insert into users values (9, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'matthew.anderson@example.com','Matthew','Anderson');
+insert into users values (10, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,'sophia.martinez@example.com','Sophia','Martinez');
+
+insert into accounts values (1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,1500.00,'UAH123456789',1);
+insert into accounts values (2, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,2000.00,'UAH654321987',2);
+insert into accounts values (3, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,500.00,'UAH987654321',2);
+insert into accounts values (4, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,1000.00,'UAH789456123',3);
+insert into accounts values (5, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,3000.00,'UAH963852741',4);
+insert into accounts values (6, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,800.00,'UAH321654987',4);
+insert into accounts values (7, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,2500.00, 'UAH159753864',5);
+insert into accounts values (8, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,1800.00, 'UAH852963741',5);
+insert into accounts values (9, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,1200.00, 'UAH147852369',5);
+insert into accounts values (10, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,3500.00, 'UAH369852147',6);
+insert into accounts values (11, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,5000.00, 'UAH789123456',6);
+insert into accounts values (12, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,2000.00, 'UAH987654123',7);
+insert into accounts values (13, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,300.00, 'UAH123789456',7);
+insert into accounts values (14, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,300.00, 'UAH456321789',7);
+insert into accounts values (15, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,1500.00, 'UAH456789321',8);
+insert into accounts values (16, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,4000.00, 'UAH789123654',9);
+insert into accounts values (17, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,2200.00, 'UAH321789456',10);
+insert into accounts values (18, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,1200.00, 'UAH654987321',10);
+insert into accounts values (19, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,1800.00, 'UAH987456123',10);
+insert into accounts values (20, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,3000.00, 'UAH147852963',10);
+
+insert into income_categories values (1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Salary', 'INCOME');
+insert into income_categories values (2, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Stock Sale', 'INCOME');
+insert into income_categories values (3, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Real Estate Rent', 'INCOME');
+insert into income_categories values (4, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Bonus', 'INCOME');
+insert into income_categories values (5, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Dividends', 'INCOME');
+
+insert into expense_categories values (1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Food', 'EXPENSE');
+insert into expense_categories values (2, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Clothing', 'EXPENSE');
+insert into expense_categories values (3, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Clothing', 'EXPENSE');
+insert into expense_categories values (4, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Entertainment', 'EXPENSE');
+insert into expense_categories values (5, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 'Medical' , 'EXPENSE');
+
+insert into operations values (1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 100.00, '2023-05-01', 'UAH987654321', 'UAH123456789', 'Payment 1', 'EXPENSE', 1, 1,NULL);
+insert into operations values (2, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 50.00, '2023-05-02', 'UAH987654321', 'UAH123456789', 'Payment 2', 'EXPENSE', 1, 2,NULL);
+insert into operations values (3, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,  200.00, '2023-05-03', 'UAH987654321', 'UAH123456789', 'Payment 3', 'EXPENSE', 1, 3,NULL);
+insert into operations values (4, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,  20.00, '2023-05-04', 'UAH987654321', 'UAH123456789', 'Payment 4', 'EXPENSE', 1, 4,NULL);
+insert into operations values (5, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true,  75.00, '2023-05-05', 'UAH987654321', 'UAH123456789', 'Payment 5', 'EXPENSE', 1, 5,NULL);
+insert into operations values (6, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 500.00, '2023-05-06', 'UAH987654321', 'UAH123456789', 'Income 1', 'INCOME', 2, NULL,1);
+insert into operations values (7, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 100.00, '2023-05-07', 'UAH987654321', 'UAH123456789', 'Income 2', 'INCOME', 2, NULL,2);
+insert into operations values (8, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 200.00, '2023-05-08', 'UAH987654321', 'UAH123456789', 'Income 3', 'INCOME', 2, NULL,3);
+insert into operations values (9, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 50.00, '2023-05-09', 'UAH963852741','UAH987654321',  'Payment 6', 'EXPENSE', 1, 4,NULL);
+insert into operations values (10, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 30.00, '2023-05-10', 'UAH963852741', 'UAH987654321', 'Payment 7', 'EXPENSE', 1, 5,NULL);
+insert into operations values (11, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 100.00, '2023-05-11', 'UAH963852741', 'UAH987654321', 'Payment 8', 'EXPENSE', 1, 5,NULL);
+insert into operations values (12, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 80.00, '2023-05-12', 'External Account', 'UAH789456123', 'Income 4', 'INCOME', 3, NULL,1);
+insert into operations values (13, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 40.00, '2023-05-13', 'External Account', 'UAH789456123', 'Income 5', 'INCOME', 3, NULL,1);
+insert into operations values (14, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), true, 50.00, '2023-05-14', 'External Account', 'UAH789456123', 'Income 6', 'INCOME', 3, NULL,1);
